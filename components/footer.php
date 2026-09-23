@@ -5,7 +5,7 @@
         <div class="footer-logo">
 
             <img
-                src="img/logo.png"
+                src="../img/logo.png"
                 alt="Logo Ana Neri"
             >
 

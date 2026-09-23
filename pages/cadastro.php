@@ -1,0 +1,70 @@
+
+<link rel="stylesheet" href="../styles/cadastro.css">
+
+<div id="container-cadastro">
+
+    <form class="cadastro" method="">
+
+        <h1>Criar conta</h1>
+
+        <p>
+            Cadastre-se para acessar a Ana Neri Materiais
+        </p>
+
+        <label for="nome">
+            Nome
+        </label>
+
+        <input 
+            type="text" 
+            id="nome" 
+            name="nome" 
+            placeholder="Digite seu nome"
+        >
+
+        <label for="email">
+            E-mail
+        </label>
+
+        <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Digite seu e-mail"
+        >
+
+        <label for="senha">
+            Senha
+        </label>
+
+        <input 
+            type="password" 
+            id="senha" 
+            name="senha" 
+            placeholder="Digite sua senha"
+        >
+
+        <label for="confirmar-senha">
+            Confirmar senha
+        </label>
+
+        <input 
+            type="password" 
+            id="confirmar-senha" 
+            name="confirmar-senha" 
+            placeholder="Digite a senha novamente"
+        >
+
+        <button type="submit">
+            Criar conta
+        </button>
+
+        <span class="login-link">
+            Já tem uma conta?
+            <a href="login.php">Entrar</a>
+        </span>
+
+    </form>
+
+</div>
+
