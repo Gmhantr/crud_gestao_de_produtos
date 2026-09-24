@@ -1,18 +1,26 @@
 <?php
-    
-    include 'conexao_.php';
 
+session_start();
 
-    $email = $_POST['email'];
+include 'conexao_.php';
 
-    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
-    $sql->execute([$email]);
+$email = $_POST['email'];
+$senha = $_POST['senha'];
 
-    $usuario = $sql->fetch();
+$sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
+$sql->execute([$email]);
 
-    if($usuario && password_verify($_POST['senha'], $usuario['senha'])) {
-        header('Location: ../pages/main.php');
-        exit;
-    } else {
-        echo "E-mail ou senha incorretos";
-    }
+$usuario = $sql->fetch();
+
+if ($usuario && password_verify($senha, $usuario['senha'])) {
+
+    $_SESSION['id'] = $usuario['id'];
+    $_SESSION['email'] = $usuario['email'];
+
+    header('Location: ../pages/main.php');
+    exit;
+
+} else {
+
+    echo "E-mail ou senha incorretos";
+}
