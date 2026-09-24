@@ -2,7 +2,7 @@
 
 <div id="container-login">
 
-    <form class="login" method="POST" action="../php/login.php">
+    <form class="login" method="POST" action="../php/login_.php">
 
         <h1>Entrar</h1>
 

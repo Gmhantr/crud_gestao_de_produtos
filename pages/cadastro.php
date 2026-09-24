@@ -3,7 +3,7 @@
 
 <div id="container-cadastro">
 
-    <form class="cadastro" method="POST" action="../php/cadastro_.php>
+    <form class="cadastro" method="POST" action="../php/cadastro_.php">
 
         <h1>Criar conta</h1>
 
