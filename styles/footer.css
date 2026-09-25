@@ -1,0 +1,115 @@
+.footer {
+    width: 100%;
+
+    background-color: #011535;
+
+    color: #ffffff;
+}
+
+
+/* CONTEÚDO */
+
+.footer-content {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding: 50px 8%;
+}
+
+
+/* LOGO */
+
+.footer-logo img {
+    width: 160px;
+
+    height: auto;
+
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    max-width: 300px;
+
+    margin: 0;
+
+    color: #aebbd1;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+}
+
+
+/* TÍTULOS */
+
+.footer h3 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-size: 1.1rem;
+}
+
+
+/* LINKS */
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-links a {
+    width: fit-content;
+
+    color: #aebbd1;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ff8bd8;
+}
+
+
+/* CONTATO */
+
+.footer-contact p {
+    margin: 0;
+
+    color: #aebbd1;
+
+    font-size: 0.9rem;
+}
+
+
+/* PARTE INFERIOR */
+
+.footer-bottom {
+    border-top: 1px solid #17345d;
+
+    padding: 20px 8%;
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #7c8799;
+
+    font-size: 0.8rem;
+}

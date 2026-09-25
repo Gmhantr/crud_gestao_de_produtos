@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" href="../styles/cadastro.css">
+<link rel="stylesheet" href="../index.css">
 
 <div id="container-cadastro">
 

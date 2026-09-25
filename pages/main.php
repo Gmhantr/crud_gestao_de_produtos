@@ -1,11 +1,11 @@
 <?php
-
 session_start();
 
 if (!isset($_SESSION['id'])) {
     header('Location: login.php');
     exit;
 }
+
 
 ?>
 
@@ -22,7 +22,19 @@ if (!isset($_SESSION['id'])) {
 
     <link rel="stylesheet" href="../index.css">
 
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/hero.css">
+
+    <link rel="stylesheet" href="../styles/nav.css">
+
+
+    <link rel="stylesheet" href="../styles/categorias.css">
+
+    <link rel="stylesheet" href="../styles/produtos.css">
+
+    
+    <link rel="stylesheet" href="../styles/footer.css">
+
+
 
 </head>
 
