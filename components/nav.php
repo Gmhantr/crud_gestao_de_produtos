@@ -49,11 +49,10 @@
             </li>
 
             <li>
-                <a href="#">
-                    <img src="../img/usuario.png" alt="" width="30px">
+                <a href="../logout.php" class="btn-logout">
+                    Sair
                 </a>
             </li>
-
         </ul>
 
     </div>
