@@ -20,7 +20,12 @@ if ($usuario && password_verify($senha, $usuario['senha'])) {
     header('Location: ../pages/main.php');
     exit;
 
-} else {
 
-    echo "E-mail ou senha incorretos";
+
+} else {
+    $mensagem = "E-mail ou senha incorretos";
+    $css = "erro";
+    header("Location: ../pages/login.php?mensagem=$mensagem&css=$css");
+    exit;
+
 }

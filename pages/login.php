@@ -1,4 +1,13 @@
 <link rel="stylesheet" href="../styles/login.css">
+<link rel="stylesheet" href="../styles/autenticacao.css">
+
+
+
+<?php
+$mensagem = $_GET["mensagem"] ?? "";
+$css = $_GET["css"] ?? "";
+?>
+
 
 <div id="container-login">
 
@@ -31,6 +40,11 @@
             name="senha"
             placeholder="Digite sua senha"
         >
+            <?php if ($mensagem): ?>
+            <div class="<?= $css ?>">
+            <?= $mensagem ?>
+            </div>
+            <?php endif; ?>
 
         <button type="submit">
             Entrar

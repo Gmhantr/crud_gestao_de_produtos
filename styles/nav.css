@@ -90,7 +90,7 @@ input.search {
 
 div.buttons-nav {
     display: flex;
-    align-items: center;
+    align-items: center ;
 
     
 
@@ -114,6 +114,7 @@ ul#ul-home-user li a {
     display: flex;
     align-content: space-around;
 
+
     
     
 }
@@ -130,12 +131,13 @@ ul#ul-home-user {
 .btn-logout {
     background-color: #dc3545;
     color: white !important;
-    padding: 10px 20px !important;
     border-radius: 8px;
     text-decoration: none;
     font-size: 1rem !important;
     font-weight: bold;
     transition: 0.2s;
+    margin-top: 8px;
+    
 }
 
 .btn-logout:hover {

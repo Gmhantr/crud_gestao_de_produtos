@@ -49,7 +49,7 @@
             </li>
 
             <li>
-                <a href="../logout.php" class="btn-logout">
+                <a href="../php/logout_.php" class="btn-logout">
                     Sair
                 </a>
             </li>

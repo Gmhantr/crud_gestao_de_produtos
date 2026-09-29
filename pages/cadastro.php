@@ -1,6 +1,16 @@
 
 <link rel="stylesheet" href="../styles/cadastro.css">
+
+<link rel="stylesheet" href="../styles/autenticacao.css">
+
 <link rel="stylesheet" href="../index.css">
+
+
+<?php
+$mensagem = $_GET["mensagem"] ?? "";
+$css = $_GET["css"] ?? "";
+?>
+
 
 <div id="container-cadastro">
 
@@ -21,6 +31,7 @@
             id="nome" 
             name="nome" 
             placeholder="Digite seu nome"
+            required
         >
 
         <label for="email">
@@ -32,6 +43,7 @@
             id="email" 
             name="email" 
             placeholder="Digite seu e-mail"
+            required
         >
 
         <label for="senha">
@@ -43,6 +55,7 @@
             id="senha" 
             name="senha" 
             placeholder="Digite sua senha"
+            required
         >
 
         <label for="confirmar-senha">
@@ -54,7 +67,15 @@
             id="confirmar-senha" 
             name="confirmar-senha" 
             placeholder="Digite a senha novamente"
+            required
         >
+
+
+            <?php if ($mensagem): ?>
+            <div class="<?= $css ?>">
+            <?= $mensagem ?>
+            </div>
+            <?php endif; ?>
 
         <button type="submit">
             Criar conta

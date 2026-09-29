@@ -1,9 +1,10 @@
 <?php
 
 $host = 'localhost';
-$db = 'escola_materias';
+$db = 'escola_materiais';
 $user = 'root';
 $senha = '';
+
 
 try {
     $pdo = new PDO(
