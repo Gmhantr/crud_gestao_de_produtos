@@ -6,11 +6,24 @@
 <link rel="stylesheet" href="../styles/nav.css">
 <link rel="stylesheet" href="../styles/cadastro_fornecedor_produtos.css">
 <link rel="stylesheet" href="../styles/footer.css">
+<link rel="stylesheet" href="../styles/autenticacao.css">
+
+<?php
+if (!isset($_SESSION['id'])) {
+    header('Location: login.php');
+    exit;
+}
+
+
+$mensagem = $_GET["mensagem"] ?? "";
+$css = $_GET["css"] ?? "";
+?>
+
 
 <main id="cadastro_fp" >
 
 
-    <form id="form-fp" method="POST" >
+    <form id="form-fp" method="POST" action="../php/fornecedores_.php">
         <h1>Cadastro de Fornecedor</h1>
         <label for="nome">Nome do Fornecedor:</label>
         <input type="text" id="nome" name="nome" placeholder="Digite o nome do Fornecedor">
@@ -26,6 +39,13 @@
 
         <label for="endereco">Endereço do Fornecedor:</label>
         <input type="text" id="endereco" name="endereco" placeholder="Digite o endereço do Fornecedor">
+
+
+            <?php if ($mensagem): ?>
+            <div class="<?= $css ?>">
+            <?= $mensagem ?>
+            </div>
+            <?php endif; ?>
 
         <button type="submit" class="btn-fp">Cadastrar</button>
     </form>

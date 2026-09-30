@@ -40,8 +40,6 @@
 }
 
 
-/* VER TODOS */
-
 .ver-todos {
     color: #536dcc;
 
@@ -179,12 +177,7 @@
 
     border-radius: 10px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #536dcc,
-            #ff5bbd
-        );
+    background: #011535;
 
     color: #ffffff;
 
@@ -206,7 +199,7 @@
 }
 
 
-/* CARRINHO */
+
 
 .btn-carrinho {
     width: 45px;
@@ -223,7 +216,7 @@
 
     border-radius: 10px;
 
-    background-color: #ffffff;
+    background-color: #011535;
 
     cursor: pointer;
 
@@ -242,7 +235,6 @@
 }
 
 .btn-carrinho:hover {
-    background-color: #17345d;
 
     border-color: #17345d;
 

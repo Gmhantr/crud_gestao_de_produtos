@@ -1,6 +1,6 @@
 <header>
 
-    <a href="#" class="nav-logo">
+    <a href="../pages/main.php" class="nav-logo">
         <img src="../img/logo.png" alt="Logo Ana Neri" width="180px">
     </a>
 
@@ -9,7 +9,7 @@
         <ul id="ul-home">
 
             <li>
-                <a href="#">inicio</a>
+                <a href="../pages/main.php">inicio</a>
             </li>
 
             <li>

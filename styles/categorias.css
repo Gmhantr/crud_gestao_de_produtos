@@ -8,7 +8,6 @@
 }
 
 
-/* CABEÇALHO */
 
 .categorias-header {
     text-align: center;
@@ -37,7 +36,7 @@
 }
 
 
-/* CARROSSEL */
+
 
 .categorias-carrossel {
     width: 100%;
@@ -55,8 +54,6 @@
     scrollbar-width: thin;
 }
 
-
-/* CARD */
 
 .categoria-card {
     flex: 0 0 190px;
@@ -86,7 +83,6 @@
 }
 
 
-/* IMAGEM */
 
 .categoria-card img {
     width: 110px;
@@ -100,7 +96,7 @@
 }
 
 
-/* NOME */
+
 
 .categoria-card h3 {
     margin: 0;
@@ -113,7 +109,7 @@
 }
 
 
-/* HOVER */
+
 
 .categoria-card:hover {
     transform: translateY(-7px);
@@ -128,7 +124,7 @@
 }
 
 
-/* BARRA DO CARROSSEL */
+
 
 .categorias-carrossel::-webkit-scrollbar {
     height: 7px;

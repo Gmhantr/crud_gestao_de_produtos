@@ -1,3 +1,21 @@
+<?php
+
+include __DIR__ . '/../php/conexao_.php';
+
+$sql = $pdo->query("
+    SELECT 
+        id,
+        nome,
+        categoria
+    FROM produtos
+    ORDER BY id DESC
+");
+
+$produtos = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
 <section class="produtos">
 
     <div class="produtos-header">
@@ -14,28 +32,22 @@
 
     </div>
 
-
     <div class="produtos-grid">
 
-        <?php
+        <?php if (isset($produtos) && count($produtos) > 0): ?>
 
-
-        if (isset($produtos) && count($produtos) > 0):
-
-            foreach ($produtos as $produto):
-        ?>
+            <?php foreach ($produtos as $produto): ?>
 
                 <div class="produto-card">
 
                     <div class="produto-imagem">
 
                         <img
-                            src="img/produtos/<?= htmlspecialchars($produto['imagem']) ?>"
-                            alt="<?= htmlspecialchars($produto['nome']) ?>"
+                            src="../img/produto.png"
+                            alt="produto"
                         >
 
                     </div>
-
 
                     <div class="produto-info">
 
@@ -47,7 +59,6 @@
                             <?= htmlspecialchars($produto['nome']) ?>
                         </h3>
 
-
                         <div class="produto-acoes">
 
                             <button
@@ -57,7 +68,6 @@
                                 Comprar
                             </button>
 
-
                             <button
                                 class="btn-carrinho"
                                 data-id="<?= $produto['id'] ?>"
@@ -65,7 +75,7 @@
                             >
 
                                 <img
-                                    src="img/carrinho.png"
+                                    src="../img/carrinho.png"
                                     alt="Adicionar ao carrinho"
                                 >
 
@@ -77,11 +87,9 @@
 
                 </div>
 
-        <?php
-            endforeach;
+            <?php endforeach; ?>
 
-        else:
-        ?>
+        <?php else: ?>
 
             <p class="produtos-vazio">
                 Nenhum produto disponível no momento.

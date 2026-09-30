@@ -20,7 +20,7 @@
 
             <h3>Links</h3>
 
-            <a href="#">Início</a>
+            <a href="../pages/main.php">Início</a>
             <a href="#">Materiais</a>
             <a href="#">Sobre</a>
 
