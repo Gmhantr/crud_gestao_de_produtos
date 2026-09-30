@@ -35,6 +35,9 @@ if (!isset($_SESSION['id'])) {
     <link rel="stylesheet" href="../styles/footer.css">
 
 
+    <link rel='stylesheet' href='../styles/admin.css'>
+
+
 
 </head>
 
@@ -42,9 +45,11 @@ if (!isset($_SESSION['id'])) {
 
     <div class="container">
 
+        
         <?php include __DIR__  . '/../components/nav.php'; ?>
 
-        <?php include __DIR__  . '/../components/hero.php'; ?>
+        <?php include __DIR__ . '/../components/admin.php'?>   
+         
 
         <?php include  __DIR__  . '/../components/categorias.php'; ?>
 

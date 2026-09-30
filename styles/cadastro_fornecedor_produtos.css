@@ -1,0 +1,52 @@
+main#cadastro_fp {
+    background-color: #fff;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 0;
+}
+
+form#form-fp {
+    width: 60%;
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+form#form-fp label {
+    display: block;
+    margin-bottom: 8px;
+    color: #011535;
+    font-weight: bold;
+}
+
+form#form-fp input {
+    display: block;
+    width: 100%;
+    height: 42px;
+    margin-bottom: 20px;
+    padding: 0 12px;
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+
+    font-size: 15px;
+    outline: none;
+}
+
+form#form-fp input:focus {
+    border-color: #011535;
+    box-shadow: 0 0 0 2px rgba(1, 21, 53, 0.1);
+}
+
+.btn-fp {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #011535;
+    color: white;
+}

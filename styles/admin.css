@@ -1,0 +1,47 @@
+div#container-adm {
+
+    background-color: #011535 ;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 30px ;
+    border: 1px solid gray;
+}
+
+nav#nav-adm {
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    
+
+}
+
+ul#ul-adm {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    
+    
+ 
+}
+
+
+ul#ul-adm li a {
+
+    padding: 10px;
+    text-decoration: none;
+    color: #ffff;
+    font-size: 1.0rem;
+    display: flex;
+    align-content: space-around;
+
+    
+    
+}
+
+

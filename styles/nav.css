@@ -2,10 +2,12 @@
     max-width: 100%;   
     display: grid;
     grid-template-columns: 1fr;
+
     grid-template-areas: 
         'cabecalho'
+        'admin'
         'principal'
-    ;  
+    ;
 }
 
 header {
