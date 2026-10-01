@@ -1,18 +1,5 @@
-
-
-<?php include __DIR__ . '/../components/nav.php'; ?>
-<?php include __DIR__ . '/../components/admin.php'; ?>
-
-<link rel="stylesheet" href="../styles/admin.css">
-<link rel="stylesheet" href="../index.css">
-<link rel="stylesheet" href="../styles/nav.css">
-<link rel="stylesheet" href="../styles/cadastro_fornecedor_produtos.css">
-<link rel="stylesheet" href="../styles/footer.css">
-<link rel="stylesheet" href="../styles/autenticacao.css">
-
 <?php
 
-include __DIR__ . '/../php/conexao_.php';
 
 session_start();
 
@@ -20,6 +7,14 @@ if (!isset($_SESSION['id'])) {
     header('Location: login.php');
     exit;
 }
+
+
+include __DIR__ . '/../components/nav.php';
+include __DIR__ . '/../components/admin.php';
+
+include __DIR__ . '/../php/conexao_.php';
+
+
 
 $sql = $pdo->query("
     SELECT id, nome
@@ -29,62 +24,158 @@ $sql = $pdo->query("
 
 $fornecedores = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-
-$mensagem = $_GET["mensagem"] ?? "";
-$css = $_GET["css"] ?? "";
-
-
 ?>
+
+
+
+<link rel="stylesheet" href="../styles/admin.css">
+<link rel="stylesheet" href="../index.css">
+<link rel="stylesheet" href="../styles/nav.css">
+<link rel="stylesheet" href="../styles/cadastro_fornecedor_produtos.css">
+<link rel="stylesheet" href="../styles/footer.css">
+<link rel="stylesheet" href="../styles/autenticacao.css">
+
 
 <main id="cadastro_fp">
 
-    <form id="form-fp" method="POST" action="../php/produtos_.php">
+    <section class="area-produtos">
 
-        <h1>Cadastro de Produto</h1>
 
-        <label for="nome">Nome do Produto:</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite o nome do Produto">
+        <form id="form-fp">
 
-        <label for="codigo">Código do Produto:</label>
-        <input type="text" id="codigo" name="codigo" placeholder="Digite o código do Produto">
+            <h1>Cadastro de Produto</h1>
 
-        <label for="preco">Preço do Produto:</label>
-        <input type="number" id="preco" name="preco" placeholder="Digite o preço do Produto" step="0.01" >
 
-        <label for="quantidade">Quantidade em Estoque:</label>
-        <input type="number" id="quantidade" name="quantidade" placeholder="Digite a quantidade">
+            <label for="nome">
+                Nome do Produto:
+            </label>
 
-        <label for="descricao">Descrição do Produto:</label>
-        <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição do Produto" >
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite o nome do Produto"
+                required
+            >
 
-        <label for="fornecedor_id">Fornecedor:</label>
 
-        <select id="fornecedor_id" name="fornecedor_id">
+            <label for="codigo">
+                Código do Produto:
+            </label>
 
-            <option class="forn-produtos" value="">Selecione um fornecedor</option>
+            <input
+                type="text"
+                id="codigo"
+                name="codigo"
+                placeholder="Digite o código do Produto"
+                required
+            >
 
-            <?php foreach ($fornecedores as $fornecedor): ?>
 
-                <option value="<?= $fornecedor['id'] ?>">
-                    <?= htmlspecialchars($fornecedor['nome']) ?>
+            <label for="preco">
+                Preço do Produto:
+            </label>
+
+            <input
+                type="number"
+                id="preco"
+                name="preco"
+                placeholder="Digite o preço do Produto"
+                step="0.01"
+                required
+            >
+
+
+            <label for="quantidade">
+                Quantidade em Estoque:
+            </label>
+
+            <input
+                type="number"
+                id="quantidade"
+                name="quantidade"
+                placeholder="Digite a quantidade"
+                required
+            >
+
+
+            <label for="descricao">
+                Descrição do Produto:
+            </label>
+
+            <input
+                type="text"
+                id="descricao"
+                name="descricao"
+                placeholder="Digite a descrição do Produto"
+                required
+            >
+
+
+            <label for="fornecedor_id">
+                Fornecedor:
+            </label>
+
+
+            <select
+                id="fornecedor_id"
+                name="fornecedor_id"
+                required
+            >
+
+                <option value="">
+                    Selecione um fornecedor
                 </option>
 
-            <?php endforeach; ?>
 
-        </select>
+                <?php foreach ($fornecedores as $fornecedor): ?>
 
-            <?php if ($mensagem): ?>
-            <div class="<?= $css ?>">
-            <?= $mensagem ?>
-            </div>
-            <?php endif; ?>
+                    <option
+                        value="<?= $fornecedor['id'] ?>"
+                    >
 
-        <button type="submit" class="btn-fp">
-            Cadastrar
-        </button>
+                        <?= htmlspecialchars($fornecedor['nome']) ?>
 
-    </form>
+                    </option>
+
+                <?php endforeach; ?>
+
+            </select>
+
+
+            <div id="mensagem"></div>
+
+
+            <button
+                type="submit"
+                class="btn-fp"
+            >
+                Cadastrar
+            </button>
+
+
+        </form>
+
+
+
+        <section id="lista-produtos">
+
+            <h2>
+                Produtos cadastrados
+            </h2>
+
+
+            <div id="produtos"></div>
+
+        </section>
+
+
+    </section>
 
 </main>
+
+
+<script src="../js/produtos.js"></script>
+
 
 <?php include __DIR__ . '/../components/footer.php'; ?>

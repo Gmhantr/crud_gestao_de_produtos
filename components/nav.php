@@ -5,57 +5,33 @@
     </a>
 
     <nav id="nav-home">
-
         <ul id="ul-home">
-
-            <li>
-                <a href="../pages/main.php">inicio</a>
-            </li>
-
-            <li>
-                <a href="#">Materiais</a>
-            </li>
-
-            <li>
-                <a href="#">Salas</a>
-            </li>
-
-            <li>
-                <a href="#">Sobre</a>
-            </li>
-
+            <li><a href="../pages/main.php">inicio</a></li>
+            <li><a href="#">Materiais</a></li>
+            <li><a href="#">Salas</a></li>
+            <li><a href="#">Sobre</a></li>
         </ul>
-
     </nav>
 
     <div class="input-container">
-
-        <input
-            type="text"
-            placeholder="Buscar Materiais.."
-            class="search"
-        >
-
+        <input type="text" placeholder="Buscar Materiais.." class="search">
     </div>
 
     <div class="buttons-nav">
-
         <ul id="ul-home-user">
 
             <li>
-                <a href="#">
-                    <img src="../img/carrinho.png" alt="" width="30px">
+                <a href="../pages/carrinho.php" class="link-carrinho">
+                    <img src="../img/carrinho.png" alt="Carrinho" width="30px">
+                    <span id="contador-carrinho">0</span>
                 </a>
             </li>
 
             <li>
-                <a href="../php/logout_.php" class="btn-logout">
-                    Sair
-                </a>
+                <a href="../php/logout_.php" class="btn-logout">Sair</a>
             </li>
-        </ul>
 
+        </ul>
     </div>
 
 </header>
-

@@ -2,52 +2,93 @@
 
 include 'conexao_.php';
 
-var_dump($_POST);
+require_once __DIR__ . '/classes/fornecedores_.php';
 
-$nome = $_POST['nome'] ?? "";
-$cnpj = $_POST['cnpj'] ?? "";
-$telefone = $_POST['telefone'] ?? "";
-$email = $_POST['email'] ?? "";
-$endereco = $_POST['endereco'] ?? "";
 
 try {
 
+
+    $fornecedor = new Fornecedor(
+
+        $_POST['nome'] ?? "",
+        $_POST['cnpj'] ?? "",
+        $_POST['telefone'] ?? "",
+        $_POST['email'] ?? "",
+        $_POST['endereco'] ?? ""
+
+    );
+
+
+
     $sql = $pdo->prepare("
+
         INSERT INTO fornecedores
-        (nome, cnpj, telefone, email, endereco)
-        VALUES (?, ?, ?, ?, ?)
+
+        (
+            nome,
+            cnpj,
+            telefone,
+            email,
+            endereco
+        )
+
+        VALUES (?,?,?,?,?)
+
     ");
 
+
+
     $sql->execute([
-        $nome,
-        $cnpj,
-        $telefone,
-        $email,
-        $endereco
+
+        $fornecedor->getNome(),
+        $fornecedor->getCnpj(),
+        $fornecedor->getTelefone(),
+        $fornecedor->getEmail(),
+        $fornecedor->getEndereco()
+
     ]);
 
-    $mensagem = "Fornecedor cadastrado com sucesso";
-    $css = "sucesso";
 
-     header("Location: ../pages/cadastrar_fornecedor.php?mensagem=$mensagem&css=$css");
-     exit;
 
-} catch (PDOException $e) {
+    echo json_encode([
 
-    if ($e->errorInfo[1] === 1062) {
+        "sucesso" => true,
 
-        $mensagem = "Esse CNPJ já está cadastrado!";
-        $css = "erro";
+        "mensagem" => "Fornecedor cadastrado com sucesso"
 
-        header("Location: ../pages/cadastrar_fornecedor.php?mensagem=$mensagem&css=$css");
-     exit;
+    ]);
 
-    } else {
 
-        $mensagem = "Erro ao cadastrar o fornecedor";
-        $css = "erro";
 
-        header("Location: ../pages/cadastrar_fornecedor.php?mensagem=$mensagem&css=$css");
-     exit;
+} catch(PDOException $e) {
+
+
+    if($e->errorInfo[1] == 1062){
+
+
+        echo json_encode([
+
+            "sucesso" => false,
+
+            "mensagem" => "Esse CNPJ já está cadastrado"
+
+        ]);
+
+
+
+    }else{
+
+
+        echo json_encode([
+
+            "sucesso" => false,
+
+            "mensagem" => $e->getMessage()
+
+        ]);
+
+
     }
+
+
 }

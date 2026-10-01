@@ -255,3 +255,60 @@
 
     font-size: 1rem;
 }
+
+
+.produto-selecao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 15px;
+
+    color: #536dcc;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.produto-checkbox {
+    width: 18px;
+    height: 18px;
+
+    accent-color: #011535;
+
+    cursor: pointer;
+}
+
+.cesta-acoes {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 35px;
+}
+
+#btn-adicionar-cesta {
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #011535;
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+#btn-adicionar-cesta:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}

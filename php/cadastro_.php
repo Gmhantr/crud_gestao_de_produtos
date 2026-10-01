@@ -1,54 +1,67 @@
 <?php
 
-
 include 'conexao_.php';
+require_once __DIR__ . '/classes/usuarios.php';
 
 $nome = $_POST['nome'] ?? "";
 $email = $_POST['email'] ?? "";
+$senha = $_POST['senha'] ?? "";
+$confirmar_senha = $_POST['confirmar-senha'] ?? "";
 
-if ($_POST['senha'] === $_POST['confirmar-senha']) {
+if ($senha !== $confirmar_senha) {
 
-    $senha_hash = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-} else {
-    die("As senhas não coincidem.");
+    $mensagem = "As senhas não coincidem.";
+    $css = "erro";
+
+    header("Location: ../pages/cadastro.php?mensagem=$mensagem&css=$css");
+    exit;
 }
 
-    try {
+$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-        $sql = $pdo->prepare("
-        INSERT INTO usuarios (nome, email, senha)
+$usuario = new Usuario(
+    $nome,
+    $email,
+    $senha_hash
+);
+
+try {
+
+    $sql = $pdo->prepare("
+        INSERT INTO usuarios
+        (nome, email, senha)
         VALUES (?, ?, ?)
     ");
-        $sql->execute([
-        $nome,
-        $email,
-        $senha_hash
+
+    $sql->execute([
+        $usuario->getNome(),
+        $usuario->getEmail(),
+        $usuario->getSenha()
     ]);
 
-    echo "usuario cadastrado com sucesso";
+    $mensagem = "Cadastro realizado com sucesso";
+    $css = "sucesso";
 
-            $mensagem = "Cadastro Realizado com sucesso";
-            $css = "sucesso";
-            header("Location: ../pages/cadastro.php?mensagem=$mensagem&css=$css");
-            exit;
-
-    } catch (PDOException $e) {
-
-        if ($e -> errorInfo[1] == 1062){
-            $mensagem = "Esse email ja esta sendo utilizado!";
-            $css = "erro";
-            header("Location: ../pages/cadastro.php?mensagem=$mensagem&css=$css");
-            exit;
+    header("Location: ../pages/cadastro.php?mensagem=$mensagem&css=$css");
     exit;
-        } else {
-            $mensagem = "Erro ao cadastrar o usuario";
-            $css = "erro";
-        }
 
+} catch (PDOException $e) {
+
+    if ($e->errorInfo[1] == 1062) {
+
+        $mensagem = "Esse email já está sendo utilizado!";
+        $css = "erro";
+
+        header("Location: ../pages/cadastro.php?mensagem=$mensagem&css=$css");
+        exit;
+
+    } else {
+
+        $mensagem = "Erro ao cadastrar o usuário";
+        $css = "erro";
+
+        header("Location: ../pages/cadastro.php?mensagem=$mensagem&css=$css");
+        exit;
     }
-
-
-
-
-
+}
 

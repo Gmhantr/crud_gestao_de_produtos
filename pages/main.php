@@ -22,8 +22,6 @@ if (!isset($_SESSION['id'])) {
 
     <link rel="stylesheet" href="../index.css">
 
-    <link rel="stylesheet" href="../styles/hero.css">
-
     <link rel="stylesheet" href="../styles/nav.css">
 
 
