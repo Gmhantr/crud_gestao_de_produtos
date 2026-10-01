@@ -214,17 +214,9 @@ Campos:
 
 DER - Diagrama Entidade Relacionamento
 
-COLOCAR AQUI A IMAGEM DO DER GERADO NO DBDIAGRAM.IO
+(vou anexar)
 
-Relacionamentos:
 
-Usuario 1:N Cesta
-
-Fornecedor 1:N Produto
-
-Cesta 1:N Itens_Cesta
-
-Produto 1:N Itens_Cesta
 
 
 ------------------------------------------------------------------------
