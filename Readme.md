@@ -211,7 +211,7 @@ Campos:
 
 DER - Diagrama Entidade Relacionamento
 
-![DER_PROD][https://github.com/Gmhantr/crud_gestao_de_produtos/blob/main/DER_PROD.png]
+![DER_PROD](https://github.com/Gmhantr/crud_gestao_de_produtos/blob/main/DER_PROD.png)
 
 
 
