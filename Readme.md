@@ -119,15 +119,12 @@ Cada produto selecionado representa apenas uma unidade.
 
 Não existe controle de quantidade dentro da cesta.
 
-------------------------------------------------------------------------
-
-Carrinho / Cesta
-
 A cesta apresenta:
 
 -   Produtos selecionados pelo usuário;
 -   Quantidade de produtos selecionados;
 -   Valor total dos produtos.
+-   Tendo o funcionamento de remoção de itens individuais (não a como adicionar quantidades do mesmo arquivo nessa versão).
 
 O sistema calcula automaticamente o resumo da compra.
 
@@ -214,12 +211,18 @@ Campos:
 
 DER - Diagrama Entidade Relacionamento
 
-(vou anexar)
+![DER_PROD][https://github.com/Gmhantr/crud_gestao_de_produtos/blob/main/DER_PROD.png]
 
 
 
 
 ------------------------------------------------------------------------
+components:
+
+- categorias.php <----- inativo até futuras atualizações
+- nav.php
+- footer.php
+- admin.php
 
 
 ------------------------------------------------------------------------
@@ -251,7 +254,7 @@ Instale o XAMPP contendo:
 
 Copiar a pasta do projeto para:
 
-C:
+C:XAMP/htdocs/
 
 3 - Criar o banco de dados
 
@@ -277,11 +280,10 @@ Iniciar Apache e MySQL no XAMPP.
 
 Acessar:
 
-http://localhost/nome_do_projeto
+http://localhost/nome_do_projeto/caminho/caminho
 
 ------------------------------------------------------------------------
 
-Autor
 
 Desenvolvido por:
 
