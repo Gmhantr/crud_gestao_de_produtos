@@ -197,15 +197,6 @@ Campos:
 -   usuario_id
 -   criado_em
 
-Itens_Cesta
-
-Relaciona os produtos selecionados na cesta.
-
-Campos:
-
--   id
--   cesta_id
--   produto_id
 
 ------------------------------------------------------------------------
 
